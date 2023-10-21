@@ -124,7 +124,7 @@ void delete_book(void)
     char u8_book_name[50];
     printf("****************************\n");
     printf("Enter the name of book which you delete: ");
-    // scanf("%[^\n]s", &u8_book_name);
+  
     scanf(" %s", &u8_book_name);
 
     book *book_to_delete = search_book_by_name(u8_book_name);
@@ -132,10 +132,9 @@ void delete_book(void)
     if (book_to_delete != NULL)
     {
         // Delete the book from the library.
-        printf("copies :%d \n", book_to_delete->states);
 
         int temp = book_to_delete->copies;
-        printf("Temp :%d \n", temp);
+        
         for (int i = book_to_delete - books_table; i < num_books - 1; i++)
         {
             books_table[i] = books_table[i + 1];
@@ -150,7 +149,7 @@ void delete_book(void)
         }
 
         printf("Books :%d \n", num_books);
-        // num_books -=books_table[temp].states;
+      
 
         printf("The book has been deleted.\n");
     }
